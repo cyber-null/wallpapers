@@ -32,9 +32,9 @@ High-resolution wallpapers optimized for 16:9 and ultrawide screens
  - windows
 
 ## Mobile Wallpapers
- - abstract
  - anime
  - artworks
+ - cityscape
  - minimal
 
 # Preview
@@ -63,6 +63,15 @@ Each category includes a thumbnail preview generated from selected wallpapers.
 | windows | ![windows](desktops/thumbnails/windows.webp) |
 
 
+### Mobile Wallpapers
+
+| Categories | thumbnails |
+| ---------- | ---------- |
+| anime | ![anime](mobile/thumbnails/anime.webp) |
+| artworks | ![artworks](mobile/thumbnails/artworks.webp) |
+| cityscape | ![cityscape](mobile/thumbnails/cityscape.webp) |
+| minimal | ![minimal](mobile/thumbnails/minimal.webp) |
+
 # Usage
 
 You can download or clone the repository:
@@ -74,7 +83,9 @@ git clone https://github.com/cyber-null/wallpapers.git
 Then browser categories and pick wallpapers manually.
 
 
-> [!TODO]
+# TODO
+
+>[!TODO]
 > - [x] add directories
 > - [ ] add wallpapers
 > - [ ] rename wallpapers
