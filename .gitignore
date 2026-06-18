@@ -1,2 +1,14 @@
 # backups
 *.bak
+
+# temporary files
+*.temp
+*.tmp
+
+# vim
+*.swp
+*.swo
+
+#vscode
+./vscode
+
