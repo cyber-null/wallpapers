@@ -3,15 +3,29 @@
 set -euo pipefail
 
 # Global ENV
-ROOT_DIR="${1:-.}"
+ROOT_DIR=.
 THUMBNAIL_DIR="$ROOT_DIR/thumbnails"
-DEBUG="${DEBUG:-0}"
+DEBUG=0
 
 
+for arg in "$@"; do
+  case "$arg" in
+    -d|--debug)
+      DEBUG=1
+    ;;
+    *)
+      ROOT_DIR="$arg"
+    ;;
+  esac
+done
+
+  
+# loging
 log() {
   [[ "$DEBUG" == "1" ]] && echo "[DEBUG] $*"
 }
 
+# start
 echo "➡ ROOT_DIR: $ROOT_DIR"
 
 if [[ ! -d "$ROOT_DIR" ]]; then
