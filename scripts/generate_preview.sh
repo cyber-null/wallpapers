@@ -4,7 +4,6 @@ set -euo pipefail
 
 # Global ENV
 ROOT_DIR=.
-THUMBNAIL_DIR="$ROOT_DIR/thumbnails"
 DEBUG=0
 
 
@@ -19,6 +18,7 @@ for arg in "$@"; do
   esac
 done
 
+THUMBNAIL_DIR="$ROOT_DIR/thumbnails"
   
 # loging
 log() {
