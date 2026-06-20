@@ -56,7 +56,7 @@ Each category includes a thumbnail preview generated from selected wallpapers.
 | linux | ![linux](desktops/thumbnails/linux.webp) |
 | minimal | ![minimal](desktops/thumbnails/minimal.webp) |
 | nature | ![nature](desktops/thumbnails/nature.webp) |
-| pixel-art | ![art](desktops/thumbnails/art.webp) |
+| pixel-art | ![pixel-art](desktops/thumbnails/pixel-art.webp) |
 | space | ![space](desktops/thumbnails/space.webp) |
 | technology | ![technology](desktops/thumbnails/technology.webp) |
 | vehicles | ![vehicles](desktops/thumbnails/vehicles.webp) |
