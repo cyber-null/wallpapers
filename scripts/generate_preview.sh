@@ -5,7 +5,7 @@ set -euo pipefail
 # Global ENV
 ROOT_DIR=.
 DEBUG=0
-
+THUMBNAIL_DIR="./assets/thumbnails"
 
 for arg in "$@"; do
   case "$arg" in
@@ -18,7 +18,6 @@ for arg in "$@"; do
   esac
 done
 
-THUMBNAIL_DIR="$ROOT_DIR/thumbnails"
   
 # loging
 log() {
@@ -60,7 +59,7 @@ for dir in "${dirs[@]}"; do
   folder_name=$(basename "$dir")
 
   # pass thumbnails dir
-  [[ "$folder_name" == "thumbnails" ]] && continue
+  # [[ "$folder_name" == "thumbnails" ]] && continue
 
   preview_dir="$dir/.preview"
 
@@ -77,6 +76,7 @@ for dir in "${dirs[@]}"; do
     # "$preview_dir"/*.jpeg
     "$preview_dir"/*.png
     # "$preview_dir"/*.webp
+    # "$$preview_dir/*.gif"
   )
   
   if (( ${#images[@]} == 0 )); then
@@ -84,7 +84,7 @@ for dir in "${dirs[@]}"; do
     continue
   fi
 
-  output_file="$THUMBNAIL_DIR/${folder_name}.webp"
+  output_file="$THUMBNAIL_DIR/${ROOT_DIR}_${folder_name}.webp"
 
   echo "Creating thumbnail: $folder_name (${#images[@]} images)"
 
