@@ -1,41 +1,18 @@
 # wallpapers
-> the repository for my wallpapers that i have :)
+> My personal collection of wallpapers for desktop and mobile devices.
 
 # 📁 Structure
 ```
 wallpapers
+├── assets
+│   └── thumbnails
 ├── desktops
 ├── mobile
 └── scripts
 ```
 
 # Categories
-## Desktops Wallpapers
-
-High-resolution wallpapers optimized for 16:9 and ultrawide screens
-
- - abstract
- - anime
- - architecture
- - artworks
- - cityscape
- - dynamic
- - extra
- - gaming
- - linux
- - minimal
- - nature
- - pixel-art
- - space
- - technology
- - vehicles
- - windows
-
-## Mobile Wallpapers
- - anime
- - artworks
- - cityscape
- - minimal
+> See the preview section below for available categories.
 
 # Preview
 
@@ -80,6 +57,6 @@ You can download or clone the repository:
 git clone https://github.com/cyber-null/wallpapers.git
 ```
 
-Then browser categories and pick wallpapers manually.
+Then browse categories and pick wallpapers manually.
 
 
