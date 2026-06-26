@@ -21,7 +21,9 @@ done
   
 # loging
 log() {
-  [[ "$DEBUG" == "1" ]] && echo "[DEBUG] $*"
+  if (( DEBUG )); then
+    echo "[DEBUG] $*"
+  fi
 }
 
 # start
