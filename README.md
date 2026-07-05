@@ -37,7 +37,7 @@ Each category includes a thumbnail preview generated from selected wallpapers.
 | space | ![space](assets/thumbnails/desktops_space.webp) |
 | technology | ![technology](assets/thumbnails/desktops_technology.webp) |
 | vehicles | ![vehicles](assets/thumbnails/desktops_vehicles.webp) |
-| windows | ![windows](assets/thumbnails/desktops_windows.webp) |
+| windows | ![windows](assets/thumbnails/desktops_technology_windows.webp) |
 
 
 ### Mobile Wallpapers
