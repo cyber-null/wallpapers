@@ -26,7 +26,7 @@ Each category includes a thumbnail preview generated from selected wallpapers.
 | anime | ![anime](assets/thumbnails/desktops_anime.webp) |
 | architecture | ![architecture](assets/thumbnails/desktops_architecture.webp) |
 | artworks | ![artworks](assets/thumbnails/desktops_artworks.webp) |
-| cityscape | ![cityscape](assets/thumbnails/desktops_cityscape.webp) |
+| cityspace | ![cityspace](assets/thumbnails/desktops_cityspace.webp) |
 | dynamic | ![dynamic](assets/thumbnails/desktops_dynamic.webp) |
 | extra | ![extra](assets/thumbnails/desktops_extra.webp) |
 | gaming | ![gaming](assets/thumbnails/desktops_gaming.webp) |
