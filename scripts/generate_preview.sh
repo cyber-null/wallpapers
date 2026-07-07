@@ -164,7 +164,7 @@ collect_images() {
 # ---------- per-folder processing ----------
 process_folder() {
   local dir="$1"
-  local folder_name preview_dir output_file
+  local folder_name preview_dir root_subdir output_file
 
   folder_name=$(basename "$dir")
   preview_dir="$dir/.preview"
@@ -185,7 +185,9 @@ process_folder() {
     return
   fi
 
-  output_file="$THUMBNAIL_DIR/$(sanitize "$ROOT_DIR")_${folder_name}.webp"
+  root_subdir="$THUMBNAIL_DIR/$(sanitize "$ROOT_DIR")"
+  mkdir -p "$root_subdir"
+  output_file="$root_subdir/${folder_name}.webp"
 
   echo "Creating thumbnail: $folder_name (${#images[@]} images)"
   log "Files: ${images[*]}"
