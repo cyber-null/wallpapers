@@ -6,8 +6,8 @@
 wallpapers
 ├── assets
 │   └── thumbnails
-├── desktops
-├── mobile
+├── landscape
+├── portrait
 └── scripts
 ```
 
@@ -30,32 +30,32 @@ Each category includes a thumbnail preview generated from selected wallpapers.
 
 |Categories|thumbnail|
 |----------|---------|
-| abstract | ![abstract](assets/thumbnails/desktops_abstract.webp) |
-| anime | ![anime](assets/thumbnails/desktops_anime.webp) |
-| architecture | ![architecture](assets/thumbnails/desktops_architecture.webp) |
-| artworks | ![artworks](assets/thumbnails/desktops_artworks.webp) |
-| cityspace | ![cityspace](assets/thumbnails/desktops_cityspace.webp) |
-| dynamic | ![dynamic](assets/thumbnails/desktops_dynamic.webp) |
-| extra | ![extra](assets/thumbnails/desktops_extra.webp) |
-| gaming | ![gaming](assets/thumbnails/desktops_gaming.webp) |
-| linux | ![linux](assets/thumbnails/desktops_linux.webp) |
-| minimal | ![minimal](assets/thumbnails/desktops_minimal.webp) |
-| nature | ![nature](assets/thumbnails/desktops_nature.webp) |
-| pixel-art | ![pixel-art](assets/thumbnails/desktops_pixel-art.webp) |
-| space | ![space](assets/thumbnails/desktops_space.webp) |
-| technology | ![technology](assets/thumbnails/desktops_technology.webp) |
-| vehicles | ![vehicles](assets/thumbnails/desktops_vehicles.webp) |
-| windows | ![windows](assets/thumbnails/desktops_technology_windows.webp) |
+| abstract | ![abstract](assets/thumbnails/landscape/abstract.webp) |
+| anime | ![anime](assets/thumbnails/landscape/anime.webp) |
+| architecture | ![architecture](assets/thumbnails/landscape/architecture.webp) |
+| artworks | ![artworks](assets/thumbnails/landscape/artworks.webp) |
+| cityspace | ![cityspace](assets/thumbnails/landscape/cityspace.webp) |
+| dynamic | ![dynamic](assets/thumbnails/landscape/dynamic.webp) |
+| extra | ![extra](assets/thumbnails/landscape/extra.webp) |
+| gaming | ![gaming](assets/thumbnails/landscape/gaming.webp) |
+| linux | ![linux](assets/thumbnails/landscape/linux.webp) |
+| minimal | ![minimal](assets/thumbnails/landscape/minimal.webp) |
+| nature | ![nature](assets/thumbnails/landscape/nature.webp) |
+| pixel-art | ![pixel-art](assets/thumbnails/landscape/pixel-art.webp) |
+| space | ![space](assets/thumbnails/landscape/space.webp) |
+| technology | ![technology](assets/thumbnails/landscape/technology.webp) |
+| vehicles | ![vehicles](assets/thumbnails/landscape/vehicles.webp) |
+| windows | ![windows](assets/thumbnails/landscape/technology_windows.webp) |
 
 
 ### Portrait
 
 | Categories | thumbnails |
 | ---------- | ---------- |
-| anime | ![anime](mobile/thumbnails/anime.webp) |
-| artworks | ![artworks](mobile/thumbnails/artworks.webp) |
-| cityscape | ![cityscape](mobile/thumbnails/cityscape.webp) |
-| minimal | ![minimal](mobile/thumbnails/minimal.webp) |
+| anime | ![anime](assets/thumbnails/portraite/anime.webp) |
+| artworks | ![artworks](assets/thumbnails/portraite/artworks.webp) |
+| cityscape | ![cityscape](assets/thumbnails/portraite/cityscape.webp) |
+| minimal | ![minimal](assets/thumbnails/portraite/minimal.webp) |
 
 # Usage
 
