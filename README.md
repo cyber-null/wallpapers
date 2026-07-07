@@ -1,5 +1,5 @@
 # wallpapers
-> My personal collection of wallpapers for desktop and mobile devices.
+> My personal collection of wallpapers for Landscape and portrait devices.
 
 # 📁 Structure
 ```
@@ -26,7 +26,7 @@ Wallpapers in this repository are organized by **orientation** rather than devic
 
 Each category includes a thumbnail preview generated from selected wallpapers.
 
-### Desktops
+### Landscape
 
 |Categories|thumbnail|
 |----------|---------|
@@ -48,7 +48,7 @@ Each category includes a thumbnail preview generated from selected wallpapers.
 | windows | ![windows](assets/thumbnails/desktops_technology_windows.webp) |
 
 
-### Mobile Wallpapers
+### Portrait
 
 | Categories | thumbnails |
 | ---------- | ---------- |
