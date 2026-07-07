@@ -53,6 +53,7 @@ Each category includes a thumbnail preview generated from selected wallpapers.
 | Categories | thumbnails |
 | ---------- | ---------- |
 | anime | ![anime](assets/thumbnails/portrait/anime.webp) |
+| gaming| ![gaming](assets/thumbnails/portrait/gaming.webp) |
 | artworks | ![artworks](assets/thumbnails/portrait/artworks.webp) |
 | cityscape | ![cityscape](assets/thumbnails/portrait/cityscape.webp) |
 | minimal | ![minimal](assets/thumbnails/portrait/minimal.webp) |
