@@ -11,6 +11,14 @@ wallpapers
 └── scripts
 ```
 
+## Wallpaper Orientation
+
+Wallpapers in this repository are organized by **orientation** rather than device type.
+
+* **Landscape** — Wallpapers designed for horizontal displays, such as desktop monitors, laptops, and other widescreen devices.
+* **Portrait** — Wallpapers designed for vertical displays, such as smartphones, tablets in portrait mode, and vertical monitors.
+
+
 # Categories
 > See the preview section below for available categories.
 
