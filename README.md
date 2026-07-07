@@ -52,10 +52,10 @@ Each category includes a thumbnail preview generated from selected wallpapers.
 
 | Categories | thumbnails |
 | ---------- | ---------- |
-| anime | ![anime](assets/thumbnails/portraite/anime.webp) |
-| artworks | ![artworks](assets/thumbnails/portraite/artworks.webp) |
-| cityscape | ![cityscape](assets/thumbnails/portraite/cityscape.webp) |
-| minimal | ![minimal](assets/thumbnails/portraite/minimal.webp) |
+| anime | ![anime](assets/thumbnails/portrait/anime.webp) |
+| artworks | ![artworks](assets/thumbnails/portrait/artworks.webp) |
+| cityscape | ![cityscape](assets/thumbnails/portrait/cityscape.webp) |
+| minimal | ![minimal](assets/thumbnails/portrait/minimal.webp) |
 
 # Usage
 
