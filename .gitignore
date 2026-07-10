@@ -4,6 +4,7 @@
 # temporary files
 *.temp
 *.tmp
+tmp/
 
 # vim
 *.swp
