@@ -36,12 +36,11 @@ Each category includes a thumbnail preview generated from selected wallpapers.
 | artworks | ![artworks](assets/thumbnails/landscape/artworks.webp) |
 | cityspace | ![cityspace](assets/thumbnails/landscape/cityspace.webp) |
 | dynamic | ![dynamic](assets/thumbnails/landscape/dynamic.webp) |
-| extra | ![extra](assets/thumbnails/landscape/extra.webp) |
 | gaming | ![gaming](assets/thumbnails/landscape/gaming.webp) |
 | linux | ![linux](assets/thumbnails/landscape/linux.webp) |
 | minimal | ![minimal](assets/thumbnails/landscape/minimal.webp) |
 | nature | ![nature](assets/thumbnails/landscape/nature.webp) |
-| pixel-art | ![pixel-art](assets/thumbnails/landscape/pixel-art.webp) |
+| pixel art | ![pixel art](assets/thumbnails/landscape/pixel-art.webp) |
 | space | ![space](assets/thumbnails/landscape/space.webp) |
 | technology | ![technology](assets/thumbnails/landscape/technology.webp) |
 | vehicles | ![vehicles](assets/thumbnails/landscape/vehicles.webp) |
@@ -57,6 +56,7 @@ Each category includes a thumbnail preview generated from selected wallpapers.
 | artworks | ![artworks](assets/thumbnails/portrait/artworks.webp) |
 | cityscape | ![cityscape](assets/thumbnails/portrait/cityscape.webp) |
 | minimal | ![minimal](assets/thumbnails/portrait/minimal.webp) |
+| pixel art | ![pixel art](assets/thumbnails/portrait/pixel art.webp)
 
 # Usage
 
