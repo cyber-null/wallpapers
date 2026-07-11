@@ -4,15 +4,15 @@
 
 * [x] Create repository structure
 * [x] Create category directories
-* [ ] Complete category organization
+* [x] Complete category organization
 * [ ] Review category consistency
 
 ## Wallpapers
 
-* [ ] Add wallpapers
+* [x] Add wallpapers
 * [ ] Rename wallpapers using naming convention
-* [ ] Remove duplicates
-* [ ] Review wallpaper quality
+* [x] Remove duplicates
+* [x] Review wallpaper quality
 
 ## Documentation
 
@@ -24,7 +24,7 @@
 ## Thumbnails
 
 * [x] Create preview generation script
-* [ ] Generate thumbnails for all categories
+* [x] Generate thumbnails for all categories
 * [ ] Review thumbnail selections
 
 ## Future Improvements
