@@ -56,7 +56,7 @@ Each category includes a thumbnail preview generated from selected wallpapers.
 | artworks | ![artworks](assets/thumbnails/portrait/artworks.webp) |
 | cityscape | ![cityscape](assets/thumbnails/portrait/cityscape.webp) |
 | minimal | ![minimal](assets/thumbnails/portrait/minimal.webp) |
-| pixel art | ![pixel art](assets/thumbnails/portrait/pixel art.webp)
+| pixel art | ![pixel art](assets/thumbnails/portrait/pixel-art.webp) |
 
 # Usage
 
