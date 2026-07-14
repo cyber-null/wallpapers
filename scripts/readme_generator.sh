@@ -31,7 +31,7 @@ IFS=$'\n\t'
 # Defaults / global configuration (overridable via CLI flags)
 # -----------------------------------------------------------------------------
 ROOT_DIR="."
-COLUMNS=3
+TABLE_COLUMNS=4
 WIDTH=250
 EXTENSIONS="jpg,jpeg,png,webp,gif,svg,bmp,avif"
 DRY_RUN=0
@@ -122,7 +122,7 @@ OPTIONS:
     -h, --help                Show this help message and exit.
     -d, --debug               Verbose debug output (paths, counts, tables, timing).
     -v, --verbose             Print each directory as it is processed.
-    -c, --columns N           Number of gallery columns (default: ${COLUMNS}).
+    -c, --columns N           Number of gallery columns (default: ${TABLE_COLUMNS}).
     -w, --width PX            Image width in pixels (default: ${WIDTH}).
     -e, --extensions LIST     Comma-separated list of image extensions
                                (default: ${EXTENSIONS}).
@@ -172,11 +172,11 @@ parse_args() {
                 ;;
             -c|--columns)
                 [[ $# -ge 2 ]] || die "Option $1 requires an argument."
-                COLUMNS="$2"
+                TABLE_COLUMNS="$2"
                 shift 2
                 ;;
             --columns=*)
-                COLUMNS="${1#*=}"
+                TABLE_COLUMNS="${1#*=}"
                 shift
                 ;;
             -w|--width)
@@ -221,8 +221,8 @@ parse_args() {
 }
 
 validate_args() {
-    [[ "$COLUMNS" =~ ^[0-9]+$ ]] || die "Invalid --columns value: '${COLUMNS}' (must be a positive integer)"
-    (( COLUMNS > 0 )) || die "--columns must be greater than 0"
+    [[ "$TABLE_COLUMNS" =~ ^[0-9]+$ ]] || die "Invalid --columns value: '${TABLE_COLUMNS}' (must be a positive integer)"
+    (( TABLE_COLUMNS > 0 )) || die "--columns must be greater than 0"
 
     [[ "$WIDTH" =~ ^[0-9]+$ ]] || die "Invalid --width value: '${WIDTH}' (must be a positive integer)"
     (( WIDTH > 0 )) || die "--width must be greater than 0"
@@ -461,7 +461,7 @@ process_readme() {
     fi
 
     local table
-    table="$(generate_table "$COLUMNS" "$WIDTH" "${basenames[@]}")"
+    table="$(generate_table "$TABLE_COLUMNS" "$WIDTH" "${basenames[@]}")"
     debug "Generated table:"
     (( DEBUG )) && printf '%s\n' "$table" >&2
 
