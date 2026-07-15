@@ -6,6 +6,12 @@
 # section of every README.md file (except the repository root README.md),
 # based on the images found in that README's own directory.
 #
+# Each gallery cell links to the full-size original image. If a matching
+# thumbnail exists in a ".thumbnails/" subdirectory (same basename, ".webp"),
+# it is displayed instead of the original to keep the README lightweight.
+# Thumbnails are only ever consumed here, never generated, resized, or
+# otherwise modified by this script.
+#
 # Author: (generated for production use)
 # License: MIT
 #
@@ -23,6 +29,8 @@
 #   * Only text between the `<!-- PREVIEW_START -->` / `<!-- PREVIEW_END -->`
 #     markers is ever touched; everything else in the README is preserved
 #     byte-for-byte.
+#   * ".git" and ".thumbnails" directories are pruned during traversal: never
+#     scanned for README.md files, and never descended into for images.
 #
 set -Eeuo pipefail
 IFS=$'\n\t'
@@ -31,7 +39,7 @@ IFS=$'\n\t'
 # Defaults / global configuration (overridable via CLI flags)
 # -----------------------------------------------------------------------------
 ROOT_DIR="."
-TABLE_COLUMNS=4
+COLUMNS=3
 WIDTH=250
 EXTENSIONS="jpg,jpeg,png,webp,gif,svg,bmp,avif"
 DRY_RUN=0
@@ -43,6 +51,14 @@ DEBUG=0
 readonly MARKER_START="<!-- PREVIEW_START -->"
 readonly MARKER_END="<!-- PREVIEW_END -->"
 readonly SCRIPT_NAME="${0##*/}"
+
+# Thumbnails, when present, live in a sibling ".thumbnails/" directory using
+# the same basename as the original image with a ".webp" extension, e.g.
+# "girl.jpg" -> ".thumbnails/girl.webp". This is fixed by convention (it's how
+# the separate thumbnail-generation tool names its output) rather than
+# user-configurable.
+readonly THUMBNAIL_DIR_NAME=".thumbnails"
+readonly THUMBNAIL_EXT="webp"
 
 # Track temp files so cleanup() can remove any that were never mv'd into place
 # (e.g. because the script died mid-write).
@@ -111,18 +127,25 @@ USAGE:
 
 DESCRIPTION:
     Recursively scans --root for README.md files (the README.md located
-    directly in --root itself is always ignored). For every other README.md
-    found, the script looks at the images sitting in that same directory,
-    builds a Markdown/HTML image gallery, and writes it between the
+    directly in --root itself is always ignored; ".git" and ".thumbnails"
+    directories are never scanned). For every other README.md found, the
+    script looks at the images sitting in that same directory, builds a
+    Markdown/HTML image gallery, and writes it between the
     ${MARKER_START} / ${MARKER_END} markers in that README. Everything
     outside the markers is left untouched. If the markers are missing, the
     script offers to add a new "## Preview" section automatically.
+
+    Each gallery cell links to the full-size original image. If a matching
+    thumbnail exists at "<dir>/${THUMBNAIL_DIR_NAME}/<name>.${THUMBNAIL_EXT}",
+    it is displayed instead of the original; otherwise the original is used
+    directly. This script never generates, resizes, or deletes thumbnails —
+    it only looks for ones that already exist.
 
 OPTIONS:
     -h, --help                Show this help message and exit.
     -d, --debug               Verbose debug output (paths, counts, tables, timing).
     -v, --verbose             Print each directory as it is processed.
-    -c, --columns N           Number of gallery columns (default: ${TABLE_COLUMNS}).
+    -c, --columns N           Number of gallery columns (default: ${COLUMNS}).
     -w, --width PX            Image width in pixels (default: ${WIDTH}).
     -e, --extensions LIST     Comma-separated list of image extensions
                                (default: ${EXTENSIONS}).
@@ -172,11 +195,11 @@ parse_args() {
                 ;;
             -c|--columns)
                 [[ $# -ge 2 ]] || die "Option $1 requires an argument."
-                TABLE_COLUMNS="$2"
+                COLUMNS="$2"
                 shift 2
                 ;;
             --columns=*)
-                TABLE_COLUMNS="${1#*=}"
+                COLUMNS="${1#*=}"
                 shift
                 ;;
             -w|--width)
@@ -221,8 +244,8 @@ parse_args() {
 }
 
 validate_args() {
-    [[ "$TABLE_COLUMNS" =~ ^[0-9]+$ ]] || die "Invalid --columns value: '${TABLE_COLUMNS}' (must be a positive integer)"
-    (( TABLE_COLUMNS > 0 )) || die "--columns must be greater than 0"
+    [[ "$COLUMNS" =~ ^[0-9]+$ ]] || die "Invalid --columns value: '${COLUMNS}' (must be a positive integer)"
+    (( COLUMNS > 0 )) || die "--columns must be greater than 0"
 
     [[ "$WIDTH" =~ ^[0-9]+$ ]] || die "Invalid --width value: '${WIDTH}' (must be a positive integer)"
     (( WIDTH > 0 )) || die "--width must be greater than 0"
@@ -238,17 +261,29 @@ validate_args() {
 # -----------------------------------------------------------------------------
 
 # Print, NUL-delimited, every README.md under ROOT_DIR except the one
-# directly inside ROOT_DIR itself. -mindepth 2 relative to ROOT_DIR
-# guarantees the root-level README.md (depth 1) is excluded while any
-# README.md in a subdirectory (depth 2+, at any nesting level) is included.
+# directly inside ROOT_DIR itself, pruning ".git" and ".thumbnails" so find
+# never descends into them (neither their contents nor any README.md inside
+# is ever visited).
+#
+# NOTE: this deliberately does NOT use "-mindepth 2" to exclude the root
+# README. GNU find's -mindepth/-maxdepth are global depth filters that
+# suppress evaluation of *all* tests -- including -prune -- for anything
+# shallower than the threshold. Combined with -prune that means directories
+# like "$root/.git" (depth 1) would never actually get pruned, and find would
+# happily recurse into them anyway. Instead, -prune is left unconstrained by
+# depth, and the root's own README.md is excluded explicitly by path.
 find_readmes() {
     local root="$1"
-    find "$root" -mindepth 2 -type f -name 'README.md' -print0
+    local root_readme="${root%/}/README.md"
+    find "$root" \
+        \( -type d \( -name '.git' -o -name "$THUMBNAIL_DIR_NAME" \) -prune \) \
+        -o -type f -name 'README.md' -not -path "$root_readme" -print0
 }
 
 # Print, NUL-delimited and alphabetically sorted, every image file that lives
 # directly inside $1 (no recursion), matching the configured extensions,
-# skipping hidden files.
+# skipping hidden files. ".thumbnails" is a directory, so "-type f" already
+# excludes it here; there is nothing further to prune at this level.
 find_images() {
     local dir="$1"
     local -a ext_array
@@ -276,12 +311,38 @@ find_images() {
 # Gallery generation
 # -----------------------------------------------------------------------------
 
+# Build a single gallery cell for one image: a link to the full-size original
+# that displays the matching thumbnail when one exists, falling back to the
+# original image itself when it doesn't. This function only ever reads the
+# filesystem (a single -f test) — it never creates, deletes, or modifies
+# anything under .thumbnails.
+# Args: dir image_basename width
+build_image_cell() {
+    local dir="$1"
+    local image="$2"
+    local width="$3"
+
+    local base_no_ext="${image%.*}"
+    local thumb_rel="${THUMBNAIL_DIR_NAME}/${base_no_ext}.${THUMBNAIL_EXT}"
+    local src="./${image}"
+
+    if [[ -f "${dir}/${thumb_rel}" ]]; then
+        src="./${thumb_rel}"
+    else
+        debug "Missing thumbnail for ${dir}/${image} (expected ${thumb_rel}); falling back to original."
+    fi
+
+    printf '<a href="./%s"><img src="%s" width="%s" alt="%s"></a>' \
+        "$image" "$src" "$width" "$base_no_ext"
+}
+
 # Build the Markdown table for a list of image basenames.
-# Args: columns width image_basename...
+# Args: dir columns width image_basename...
 generate_table() {
-    local columns="$1"
-    local width="$2"
-    shift 2
+    local dir="$1"
+    local columns="$2"
+    local width="$3"
+    shift 3
     local -a images=("$@")
     local total=${#images[@]}
 
@@ -301,9 +362,10 @@ generate_table() {
     out_lines+=("$header")
     out_lines+=("$sep")
 
-    local row="" idx=0 img
+    local row="" idx=0 img cell
     for img in "${images[@]}"; do
-        row+="| <img src=\"./${img}\" width=\"${width}\"> "
+        cell="$(build_image_cell "$dir" "$img" "$width")"
+        row+="| ${cell} "
         (( ++idx ))
         if (( idx % columns == 0 )); then
             row+="|"
@@ -461,7 +523,7 @@ process_readme() {
     fi
 
     local table
-    table="$(generate_table "$TABLE_COLUMNS" "$WIDTH" "${basenames[@]}")"
+    table="$(generate_table "$dir" "$COLUMNS" "$WIDTH" "${basenames[@]}")"
     debug "Generated table:"
     (( DEBUG )) && printf '%s\n' "$table" >&2
 
