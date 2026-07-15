@@ -1,0 +1,61 @@
+name: Wallpaper Pipeline
+
+# Trigger on every push, every pull request, and manual dispatch.
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+# Least-privilege: this workflow only reads the repo and runs local scripts.
+# It does not push commits, open issues/PRs, or write packages, so `contents: read`
+# is the only permission required.
+permissions:
+  contents: read
+
+# Cancel superseded runs on the same branch/PR to save CI minutes and avoid
+# overlapping script executions against the same wallpaper directories.
+concurrency:
+  group: wallpaper-pipeline-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Generate previews, thumbnails & README
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    # Fail fast, treat unset vars as errors, and make pipelines fail on the
+    # first failing command — applied to every `run:` step in this job.
+    defaults:
+      run:
+        shell: bash -Eeuo pipefail {0}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install ImageMagick and FFmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends imagemagick ffmpeg
+
+      - name: Make scripts executable
+        run: chmod +x scripts/generate_preview.sh scripts/thumbnail_generator.sh scripts/readme_generator.sh
+
+      - name: Generate previews (landscape)
+        run: ./scripts/generate_preview.sh landscape
+
+      - name: Generate previews (portrait)
+        run: ./scripts/generate_preview.sh portrait
+
+      - name: Generate thumbnails (landscape)
+        run: ./scripts/thumbnail_generator.sh --debug --root landscape
+
+      - name: Generate thumbnails (portrait)
+        run: ./scripts/thumbnail_generator.sh --debug --root portrait
+
+      - name: Generate README (landscape)
+        run: ./scripts/readme_generator.sh --debug --root landscape
+
+      - name: Generate README (portrait)
+        run: ./scripts/readme_generator.sh --debug --root portrait
