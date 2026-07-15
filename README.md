@@ -30,33 +30,33 @@ Each category includes a thumbnail preview generated from selected wallpapers.
 
 |Categories|thumbnail|
 |----------|---------|
-| abstract | ![abstract](assets/thumbnails/landscape/abstract.webp) |
-| anime | ![anime](assets/thumbnails/landscape/anime.webp) |
-| architecture | ![architecture](assets/thumbnails/landscape/architecture.webp) |
-| artworks | ![artworks](assets/thumbnails/landscape/artworks.webp) |
-| cityspace | ![cityspace](assets/thumbnails/landscape/cityspace.webp) |
+| [abstract](landscape/abstract/README.md) | ![abstract](assets/thumbnails/landscape/abstract.webp) |
+| [anime](landscape/anime/README.md) | ![anime](assets/thumbnails/landscape/anime.webp) |
+| [architecture](landscape/architecture/README.md) | ![architecture](assets/thumbnails/landscape/architecture.webp) |
+| [artworks](landscape/artworks/README.md) | ![artworks](assets/thumbnails/landscape/artworks.webp) |
+| [cityspace](landscape/cityspace/README.md) | ![cityspace](assets/thumbnails/landscape/cityspace.webp) |
 | dynamic | ![dynamic](assets/thumbnails/landscape/dynamic.webp) |
-| gaming | ![gaming](assets/thumbnails/landscape/gaming.webp) |
-| linux | ![linux](assets/thumbnails/landscape/linux.webp) |
-| minimal | ![minimal](assets/thumbnails/landscape/minimal.webp) |
-| nature | ![nature](assets/thumbnails/landscape/nature.webp) |
-| pixel art | ![pixel art](assets/thumbnails/landscape/pixel-art.webp) |
-| space | ![space](assets/thumbnails/landscape/space.webp) |
-| technology | ![technology](assets/thumbnails/landscape/technology.webp) |
-| vehicles | ![vehicles](assets/thumbnails/landscape/vehicles.webp) |
-| windows | ![windows](assets/thumbnails/landscape/technology_windows.webp) |
+| [gaming](landscape/gaming/README.md) | ![gaming](assets/thumbnails/landscape/gaming.webp) |
+| [linux](landscape/linux/README.md) | ![linux](assets/thumbnails/landscape/linux.webp) |
+| [minimal](landscape/minimal/README.md) | ![minimal](assets/thumbnails/landscape/minimal.webp) |
+| [nature](landscape/nature/README.md) | ![nature](assets/thumbnails/landscape/nature.webp) |
+| [pixel-art](landscape/pixel-art/README.md) | ![pixel art](assets/thumbnails/landscape/pixel-art.webp) |
+| [space](landscape/space/README.md) | ![space](assets/thumbnails/landscape/space.webp) |
+| [technology](landscape/technology/README.md) | ![technology](assets/thumbnails/landscape/technology.webp) |
+| [vehicles](landscape/vehicles/README.md) | ![vehicles](assets/thumbnails/landscape/vehicles.webp) |
+| [windows](landscape/technology/windows/README.md) | ![windows](assets/thumbnails/landscape/technology_windows.webp) |
 
 
 ### Portrait
 
 | Categories | thumbnails |
 | ---------- | ---------- |
-| anime | ![anime](assets/thumbnails/portrait/anime.webp) |
-| gaming| ![gaming](assets/thumbnails/portrait/gaming.webp) |
-| artworks | ![artworks](assets/thumbnails/portrait/artworks.webp) |
-| cityscape | ![cityscape](assets/thumbnails/portrait/cityscape.webp) |
-| minimal | ![minimal](assets/thumbnails/portrait/minimal.webp) |
-| pixel art | ![pixel art](assets/thumbnails/portrait/pixel-art.webp) |
+| [anime](portrait/anime/README.md) | ![anime](assets/thumbnails/portrait/anime.webp) |
+| [gaming](portrait/gaming/README.md)| ![gaming](assets/thumbnails/portrait/gaming.webp) |
+| [artworks](portrait/artworks/README.md) | ![artworks](assets/thumbnails/portrait/artworks.webp) |
+| [cityscape](portrait/cityspace/README.md) | ![cityscape](assets/thumbnails/portrait/cityscape.webp) |
+| [minimal](portrait/minimal/README.md) | ![minimal](assets/thumbnails/portrait/minimal.webp) |
+| [pixel-art](portrait/pixel-art/README.md) | ![pixel art](assets/thumbnails/portrait/pixel-art.webp) |
 
 # Usage
 
