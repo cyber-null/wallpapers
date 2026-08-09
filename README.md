@@ -32,6 +32,7 @@ Each category includes a thumbnail preview generated from selected wallpapers.
 |----------|---------|
 | [abstract](landscape/abstract/README.md) | ![abstract](assets/thumbnails/landscape/abstract.webp) |
 | [anime](landscape/anime/README.md) | ![anime](assets/thumbnails/landscape/anime.webp) |
+| [anime-original](landscape/anime-original/README) | ![anime-original](assets/thumbnails/landscape/anime-original.webp)
 | [architecture](landscape/architecture/README.md) | ![architecture](assets/thumbnails/landscape/architecture.webp) |
 | [artworks](landscape/artworks/README.md) | ![artworks](assets/thumbnails/landscape/artworks.webp) |
 | [cityspace](landscape/cityspace/README.md) | ![cityspace](assets/thumbnails/landscape/cityspace.webp) |
