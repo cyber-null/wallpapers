@@ -36,7 +36,7 @@ Each category includes a thumbnail preview generated from selected wallpapers.
 | [architecture](landscape/architecture/README.md) | ![architecture](assets/thumbnails/landscape/architecture.webp) |
 | [artworks](landscape/artworks/README.md) | ![artworks](assets/thumbnails/landscape/artworks.webp) |
 | [cityspace](landscape/cityspace/README.md) | ![cityspace](assets/thumbnails/landscape/cityspace.webp) |
-| dynamic | ![dynamic](assets/thumbnails/landscape/dynamic.webp) |
+| [dynamic]() | ![dynamic](assets/thumbnails/landscape/dynamic.webp) |
 | [gaming](landscape/gaming/README.md) | ![gaming](assets/thumbnails/landscape/gaming.webp) |
 | [linux](landscape/linux/README.md) | ![linux](assets/thumbnails/landscape/linux.webp) |
 | [minimal](landscape/minimal/README.md) | ![minimal](assets/thumbnails/landscape/minimal.webp) |
@@ -53,9 +53,11 @@ Each category includes a thumbnail preview generated from selected wallpapers.
 | Categories | thumbnails |
 | ---------- | ---------- |
 | [anime](portrait/anime/README.md) | ![anime](assets/thumbnails/portrait/anime.webp) |
-| [gaming](portrait/gaming/README.md)| ![gaming](assets/thumbnails/portrait/gaming.webp) |
+| [anime-original](portrait/anime-original/README.md) | ![anime-original](assets/thumbnails/portrait/anime-original.webp) |
 | [artworks](portrait/artworks/README.md) | ![artworks](assets/thumbnails/portrait/artworks.webp) |
+| [car](portrait/car/README.md) | ![car](assets/thumbnails/portrait/car.webp)
 | [cityscape](portrait/cityspace/README.md) | ![cityscape](assets/thumbnails/portrait/cityscape.webp) |
+| [gaming](portrait/gaming/README.md)| ![gaming](assets/thumbnails/portrait/gaming.webp) |
 | [minimal](portrait/minimal/README.md) | ![minimal](assets/thumbnails/portrait/minimal.webp) |
 | [pixel-art](portrait/pixel-art/README.md) | ![pixel art](assets/thumbnails/portrait/pixel-art.webp) |
 
