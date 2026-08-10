@@ -5,6 +5,6 @@
 
 | | | |
 |---|---|---|
-| <a href="./japan_city.jpg"><img src="./japan_city.jpg" width="250" alt="japan_city"></a> | | |
+| <a href="./japan_city.jpg"><img src="./.thumbnails/japan_city.webp" width="250" alt="japan_city"></a> | | |
 
 <!-- PREVIEW_END -->
