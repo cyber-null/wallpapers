@@ -5,7 +5,7 @@
 * [x] Create repository structure
 * [x] Create category directories
 * [x] Complete category organization
-* [ ] Review category consistency
+* [x] Review category consistency
 
 ## Wallpapers
 
@@ -17,7 +17,7 @@
 ## Documentation
 
 * [x] Write main README
-* [ ] Write README for each category
+* [x] Write README for each category
 * [ ] Add category descriptions
 * [ ] Add contribution guidelines
 
